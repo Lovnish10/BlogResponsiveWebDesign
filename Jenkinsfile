@@ -30,15 +30,5 @@ pipeline{
     }
   }
 
-  post{
-
-      failure{
-          echo "product build failed"
-      }
-
-      success{
-          echo "product build passed"
-      }
-  }
 
 }
