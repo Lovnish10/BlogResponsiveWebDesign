@@ -17,11 +17,7 @@ pipeline{
     }
     
     stage("test"){
-        when{
-            expression{
-                params.executeTest
-            }
-        }
+     
       steps{
       echo "in the test"
       }
@@ -30,7 +26,7 @@ pipeline{
     stage("deploy"){
       steps{
       echo "in the deploy"
-      echo "Current deployment version : ${params.VERSION}"
+    
       }
     }
   }
