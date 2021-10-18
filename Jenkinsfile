@@ -1,10 +1,6 @@
 pipeline{
 
-    environment{
-
-        CURR_VERSION = 1.0.0
-
-    }
+ 
 
   agent any
   
@@ -13,7 +9,7 @@ pipeline{
     stage("build"){
       steps{
       echo "hello world"
-      echo "Product version = ${CURR_VERSION}"
+    
       }
     }
     
