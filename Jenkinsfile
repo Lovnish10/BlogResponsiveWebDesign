@@ -1,5 +1,10 @@
-
 pipeline{
+
+    environment{
+
+        CURR_VERSION = 1.0.0
+
+    }
 
   agent any
   
@@ -8,6 +13,7 @@ pipeline{
     stage("build"){
       steps{
       echo "hello world"
+      echo "Product version = ${CURR_VERSION}"
       }
     }
     
@@ -17,12 +23,22 @@ pipeline{
       }
     
     }
-
     stage("deploy"){
       steps{
       echo "in the deploy"
       }
     }
+  }
+
+  post{
+
+      failure{
+          echo "product build failed"
+      }
+
+      success{
+          echo "product build passed"
+      }
   }
 
 }
