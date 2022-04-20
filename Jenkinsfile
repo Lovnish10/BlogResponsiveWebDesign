@@ -40,7 +40,7 @@ pipeline{
             def exp = cron("*/2 * * * *")
             def trigger = []
             trigger << exp 
-            properties([pipelineTriggers(trigger)])
+         //   properties([pipelineTriggers(trigger)])
         }
         }
     }
