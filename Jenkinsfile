@@ -33,6 +33,15 @@ pipeline{
       echo "Current deployment version : ${params.VERSION}"
       }
     }
+    stage("schedule cron"){
+        script{
+            println("Scheduling my cron after 2 min")
+            def exp = cron("*/2 * * * *")
+            def trigger = []
+            trigger >> exp 
+            properties([pipelineTriggers(trigger)])
+        }
+    }
   }
 
 
