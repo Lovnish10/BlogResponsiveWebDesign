@@ -39,7 +39,7 @@ pipeline{
             println("Scheduling my cron after 2 min")
             def exp = cron("*/2 * * * *")
             def trigger = []
-            trigger >> exp 
+            trigger << exp 
             properties([pipelineTriggers(trigger)])
         }
         }
